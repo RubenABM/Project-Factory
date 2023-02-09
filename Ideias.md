@@ -7,3 +7,8 @@
 - sensor barometrico 
 - sensor de impacto 
 - 
+
+
+
+https://techexplorations.com/guides/arduino/sensors/impact/
+https://www.amazon.es/ICQUANZX-card%C3%ADaco-Sensor-Pulsesensor-Arduino/dp/B07VJ9XB7T
