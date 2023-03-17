@@ -80,13 +80,11 @@ Links importantes
 
 
 --------
-Notas
+Comunicação
 
-O capcate comunicará com uma app android que por sua vez comunicará com um web server e base dados.
+O capacete comunicará com uma app android que por sua vez comunicará com um web server e base dados.
 Detalhos especificados nos documentos do projeto.
 
---------
-Comunicação 
 
 ![comunicacao](https://user-images.githubusercontent.com/75837129/225879553-e34f789d-0b10-48fb-9bc0-35992ba3a628.jpeg)
 
