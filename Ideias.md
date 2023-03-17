@@ -88,7 +88,7 @@ Detalhos especificados nos documentos do projeto.
 --------
 Comunicação 
 
-<img align="center" width="100" height="100" src="[https://user-images.githubusercontent.com/75837129/225879133-8f6dbfef-f15c-4e0b-8717-48f2662c09d3.jpeg]">
+<img align="center" width="100" height="100" src="(https://user-images.githubusercontent.com/75837129/225879133-8f6dbfef-f15c-4e0b-8717-48f2662c09d3.jpeg)">
 
 
 
