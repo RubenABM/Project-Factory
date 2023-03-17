@@ -47,6 +47,10 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
 
          - current <25MA
 
+- leds indicadores (piscas e luz frontal)
+
+- ESP32 dev kit
+
 
 -------
 Links importantes
