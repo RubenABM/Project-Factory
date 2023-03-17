@@ -78,3 +78,19 @@ Links importantes
 
      https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
 
+
+--------
+Notas
+
+O capcate comunicará com uma app android que por sua vez comunicará com um web server e base dados.
+Detalhos especificados nos documentos do projeto.
+
+--------
+Comunicação 
+
+![signal-2023-03-17-102052_002](https://user-images.githubusercontent.com/75837129/225878029-9155c1d0-8d00-4fbf-856c-075765b0c754.jpeg)
+
+
+
+
+
