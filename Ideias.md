@@ -64,12 +64,15 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
 
 - leds indicadores (piscas e luz frontal)
 
+         - Diametro max: 10mm
+
 - ESP32 dev kit
 
          - Dimensões:55 x 27 x 48mm (aproximadamente)
 
 - breadboard (protótipo será desenvolvido sobre breadboard)
 
+         - Dimensões: 54 x 82 x 9mm
 
 -------
 Links importantes
@@ -81,7 +84,7 @@ Links importantes
      https://components101.com/modules/neo-6mv2-gps-module
      https://components101.com/modules/neo-6mv2-gps-module
 
-- GSM/GPRS
+- GSM/GPRS (não implementado)
 
      https://circuitdigest.com/microcontroller-projects/interfacing-sim800l-module-with-esp32
 
