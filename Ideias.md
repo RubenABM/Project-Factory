@@ -88,9 +88,7 @@ Detalhos especificados nos documentos do projeto.
 --------
 Comunicação 
 
-![signal-2023-03-17-102052_002](https://user-images.githubusercontent.com/75837129/225878029-9155c1d0-8d00-4fbf-856c-075765b0c754.jpeg)
-
-
+<img align="center" width="100" height="100" src="[http://www.fillmurray.com/100/100](https://user-images.githubusercontent.com/75837129/225879133-8f6dbfef-f15c-4e0b-8717-48f2662c09d3.jpeg)">
 
 
 
