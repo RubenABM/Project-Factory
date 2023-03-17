@@ -52,20 +52,21 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
 Links importantes
 
 - GPS
-https://circuitdigest.com/microcontroller-projects/interfacing-neo6m-gps-module-with-esp32
 
-https://randomnerdtutorials.com/guide-to-neo-6m-gps-module-with-arduino/
-
-https://components101.com/modules/neo-6mv2-gps-module
+      https://circuitdigest.com/microcontroller-projects/interfacing-neo6m-gps-module-with-esp32
+      https://randomnerdtutorials.com/guide-to-neo-6m-gps-module-with-arduino/
+      https://components101.com/modules/neo-6mv2-gps-module
 
 - GSM/GPRS
-https://circuitdigest.com/microcontroller-projects/interfacing-sim800l-module-with-esp32
+
+      https://circuitdigest.com/microcontroller-projects/interfacing-sim800l-module-with-esp32
 
 - Bpm
-https://circuitdigest.com/microcontroller-projects/iot-based-heart-rate-monitor-using-max30100-pulse-oximeter-and-esp32
 
-https://components101.com/sensors/pulse-sensor
+      https://circuitdigest.com/microcontroller-projects/iot-based-heart-rate-monitor-using-max30100-pulse-oximeter-and-esp32
+      https://components101.com/sensors/pulse-sensor
 
 - MPU6050 Gyro
-https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
+
+      https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
 
