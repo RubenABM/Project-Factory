@@ -43,7 +43,7 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
          - 3.7V
          - 850mah
 
-- Módulo de conversor de impulso automático DC-DC
+- Módulo de conversor de impulso automático DC-DC (X2)
 
 https://pt.aliexpress.com/item/1005002849970161.html?algo_exp_id=c0f3ad17-9407-4700-9637-410c1c530cdd-27&pdp_ext_f=%7B%22sku_id%22%3A%2212000022459998327%22%7D&pdp_npi=3%40dis%21EUR%210.61%210.54%21%21%21%21%21%40211bf55216790429174211337d06c7%2112000022459998327%21sea%21PT%212445244118&curPageLogUid=ilFDCSWB2MDd
 
