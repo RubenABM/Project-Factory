@@ -55,6 +55,8 @@ https://pt.aliexpress.com/item/1005002849970161.html?algo_exp_id=c0f3ad17-9407-4
 
 - ESP32 dev kit
 
+- breadboard (protótipo será desenvolvido sobre breadboard)
+
 
 -------
 Links importantes
