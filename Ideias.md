@@ -30,18 +30,22 @@ https://www.amazon.es/ICQUANZX-GY-NEO6MV2-NEO-6M-cer%C3%A1mica-superpotente/dp/B
         - Maximum DC current at any output: 10mA
 
 - indicador bateria	
-https://www.amazon.es/WOWOWO-indicador-Pantalla-Capacidad-Potencia/dp/B091T33W9T		
+https://www.amazon.es/WOWOWO-indicador-Pantalla-Capacidad-Potencia/dp/B091T33W9T
+
+        - Working current ~5mA
 
 - bms
 https://www.ptrobotics.com/alimentacao/10495-modulo-para-carregamento-de-baterias-com-protecao-de-carga-tp5100-1s-2s-42v-84v.html		
 
 - bateria
-https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-850mah.html		
+https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-850mah.html	
 
-        - Working current ~5mA
+         - 3.7V
+         - 850mah
 
 - buzzer
 
+         - current <25MA
 
 
 -------
