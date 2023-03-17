@@ -66,6 +66,8 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
 
 - ESP32 dev kit
 
+         - Dimensões:55 x 27 x 48mm (aproximadamente)
+
 - breadboard (protótipo será desenvolvido sobre breadboard)
 
 
@@ -92,6 +94,9 @@ Links importantes
 
      https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
 
+- ESP32 
+
+     https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html
 
 --------
 Comunicação
