@@ -98,6 +98,8 @@ Links importantes
 
      https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
      http://arduinolearning.com/code/arduino-mpu-9250-example.php
+     https://github.com/bolderflight/invensense-imu
+     http://robojax.com/learn/arduino/?vid=robojax-MPU9250
 
 - ESP32 
 
