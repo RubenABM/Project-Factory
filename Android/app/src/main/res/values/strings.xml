@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProjectFactorySmartHelmet</string>
+    <string name="title_activity_main">PagInicial</string>
 </resources>
