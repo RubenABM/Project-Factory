@@ -92,6 +92,7 @@ Links importantes
 
      https://circuitdigest.com/microcontroller-projects/iot-based-heart-rate-monitor-using-max30100-pulse-oximeter-and-esp32
      https://components101.com/sensors/pulse-sensor
+     https://circuitdigest.com/microcontroller-projects/interfacing-pulse-sensor-with-arduino
 
 - MPU6050 Gyro
 
