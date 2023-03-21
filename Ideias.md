@@ -97,6 +97,7 @@ Links importantes
 - MPU6050 Gyro
 
      https://circuitdigest.com/microcontroller-projects/mpu6050-gyro-sensor-interfacing-with-esp32-nodemcu-board
+     http://arduinolearning.com/code/arduino-mpu-9250-example.php
 
 - ESP32 
 
