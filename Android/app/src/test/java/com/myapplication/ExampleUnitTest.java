@@ -1,4 +1,4 @@
-package com.example.projectfactorysmarthelmet;
+package com.myapplication;
 
 import org.junit.Test;
 
