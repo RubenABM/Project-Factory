@@ -1,4 +1,4 @@
-package com.example.projectfactorysmarthelmet;
+package com.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 

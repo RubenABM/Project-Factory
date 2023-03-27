@@ -1,27 +1,4 @@
-/*
- * The MIT License
- *
- * Copyright 2018 Sonu Auti http://sonuauti.com twitter @SonuAuti
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-package com.example.projectfactorysmarthelmet;
+package com.myapplication;
 
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
@@ -145,18 +122,18 @@ public class TinyWebServer extends Thread {
     private static final String BOUNDARY_REGEX = "[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?";
 
     private static final Pattern BOUNDARY_PATTERN = Pattern.compile(BOUNDARY_REGEX, Pattern.CASE_INSENSITIVE);
-    
-    
+
+
     public static String WEB_DIR_PATH="/";
     public static String SERVER_IP="localhost";
     public static int SERVER_PORT=9000;
     public static boolean isStart=true;
     public static String INDEX_FILE_NAME="index.html";
-    
+
 
     public TinyWebServer(final String ip, final int port) throws IOException {
-        
-        InetAddress addr = InetAddress.getByName(ip); ////"172.31.0.186"); 
+
+        InetAddress addr = InetAddress.getByName(ip); ////"172.31.0.186");
         serverSocket = new ServerSocket(port, 100, addr);
         serverSocket.setSoTimeout(5000);  //set timeout for listner
 
@@ -254,11 +231,11 @@ public class TinyWebServer extends Thread {
                             if (postData.length() > 0 && contentLen.length() > 0) {
                                 int len = Integer.valueOf(contentLen);
                                 postData = postData.substring(0, len);
-                               // System.out.println("Post data -> " + contentLen + " ->" + postData);
+                                // System.out.println("Post data -> " + contentLen + " ->" + postData);
                             }
                         }
 
-                       // System.out.println("contentLen ->" + contentLen + "\ncontentType ->" + contentType + "\nhostname ->" + hostname + "\nconnectionType-> " + connectionType + "\nhostname ->" + hostname + "\nuserAgent -> " + userAgent);
+                        // System.out.println("contentLen ->" + contentLen + "\ncontentType ->" + contentType + "\nhostname ->" + hostname + "\nconnectionType-> " + connectionType + "\nhostname ->" + hostname + "\nuserAgent -> " + userAgent);
                         final String requestLocation = h1[1];
                         if (requestLocation != null) {
                             processLocation(out, requestLocation, postData);
@@ -302,16 +279,16 @@ public class TinyWebServer extends Thread {
                     //System.out.println("url parms " + qparms);
                     CONTENT_TYPE = getContentType(fileName);
                     if(!CONTENT_TYPE.equals("text/plain")){
-                       // System.out.println("Full file path - >"+fullFilePath +" "+CONTENT_TYPE);
+                        // System.out.println("Full file path - >"+fullFilePath +" "+CONTENT_TYPE);
 
                         if(CONTENT_TYPE.equals("image/jpeg") || CONTENT_TYPE.equals("image/png") || CONTENT_TYPE.equals("video/mp4")){
-                           byte[] bytdata=readImageFiles(WEB_DIR_PATH+fullFilePath,CONTENT_TYPE); 
-                           //System.out.println(bytdata.length);
-                           if(bytdata!=null){
+                            byte[] bytdata=readImageFiles(WEB_DIR_PATH+fullFilePath,CONTENT_TYPE);
+                            //System.out.println(bytdata.length);
+                            if(bytdata!=null){
                                 constructHeaderImage(out, bytdata.length+"", bytdata);
-                           }else{
-                                 pageNotFound();
-                           }
+                            }else{
+                                pageNotFound();
+                            }
                         }else{
                             data=readFile(WEB_DIR_PATH+fullFilePath);
                             if(!data.equals("")){
@@ -324,8 +301,8 @@ public class TinyWebServer extends Thread {
                         data = getResultByName(fileName, qparms);
                         constructHeader(out, data.length() + "", data);
                     }
-                    
-                    
+
+
                 }
 
         }
@@ -334,7 +311,7 @@ public class TinyWebServer extends Thread {
 
     public URL getDecodedUrl(String parms) {
         try {
-            //String decodedurl =URLDecoder.decode(parms,"UTF-8"); 
+            //String decodedurl =URLDecoder.decode(parms,"UTF-8");
             URL aURL = new URL(parms);
             return aURL;
         } catch (Exception er) {
@@ -370,18 +347,18 @@ public class TinyWebServer extends Thread {
             STATUS = TinyWebServer.OKAY;
             return getNameMethod.invoke(obj, qparms).toString();
         } catch (Exception er) {
-           // er.printStackTrace();
+            // er.printStackTrace();
             return pageNotFound();
         }
     }
 
     public void setRequestType(String type) {
-       // System.out.println("REQUEST TYPE " + type);
+        // System.out.println("REQUEST TYPE " + type);
         this.REQUEST_TYPE = type;
     }
 
     public void setHttpVer(String httpver) {
-       // System.out.println("REQUEST ver " + httpver);
+        // System.out.println("REQUEST ver " + httpver);
         this.HTTP_VER = httpver;
     }
 
@@ -435,7 +412,7 @@ public class TinyWebServer extends Thread {
         if (index != -1) {
             String e = path.substring(index + 1);
             String ct = mContentTypes.get(e);
-           // System.out.println("content type: " + ct);
+            // System.out.println("content type: " + ct);
             if (ct != null) {
                 return ct;
             }
@@ -460,10 +437,10 @@ public class TinyWebServer extends Thread {
         pw.flush();
         //pw.close();
     }
-    
+
     private void constructHeaderImage(DataOutputStream output, String size, byte[] data) {
         try{
-        
+
             SimpleDateFormat gmtFrmt = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
             gmtFrmt.setTimeZone(TimeZone.getTimeZone("GMT"));
             PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(output)), false);
@@ -480,8 +457,8 @@ public class TinyWebServer extends Thread {
             output.write(data);
             output.flush();
             //System.out.println("data sent success");
-        
-        //pw.close();
+
+            //pw.close();
         }catch(Exception er){er.printStackTrace();}
 
     }
@@ -491,38 +468,38 @@ public class TinyWebServer extends Thread {
     protected void printHeader(PrintWriter pw, String key, String value) {
         pw.append(key).append(": ").append(value).append("\r\n");
     }
-    
+
     public byte[] readImageFiles(String fileName,String filetype){
         try{
-        File ifile=new File(fileName);
+            File ifile=new File(fileName);
             if(ifile.exists()){
                 if(filetype.equalsIgnoreCase("image/png") || filetype.equalsIgnoreCase("image/jpeg") || filetype.equalsIgnoreCase("image/gif") || filetype.equalsIgnoreCase("image/jpg")){
-                           FileInputStream fis = new FileInputStream(fileName);
-                           byte[] buffer = new byte[fis.available()];
-                           while (fis.read(buffer) != -1) {}
-                           fis.close();
-                           return buffer; 
+                    FileInputStream fis = new FileInputStream(fileName);
+                    byte[] buffer = new byte[fis.available()];
+                    while (fis.read(buffer) != -1) {}
+                    fis.close();
+                    return buffer;
                 }
             }else{
-            
+
             }
-          }catch(Exception er){}
+        }catch(Exception er){}
         return null;
     }
     public String readFile(String fileName){
-        String content="";    
+        String content="";
         try{
             File ifile=new File(fileName);
             if(ifile.exists()){
                 FileInputStream fis = new FileInputStream(fileName);
-                    byte[] buffer = new byte[10];
-                    StringBuilder sb = new StringBuilder();
-                    while (fis.read(buffer) != -1) {
-                            sb.append(new String(buffer));
-                            buffer = new byte[10];
-                    }
-                    fis.close();
-                    content = sb.toString();
+                byte[] buffer = new byte[10];
+                StringBuilder sb = new StringBuilder();
+                while (fis.read(buffer) != -1) {
+                    sb.append(new String(buffer));
+                    buffer = new byte[10];
+                }
+                fis.close();
+                content = sb.toString();
             }else{
                 pageNotFound();
                 return content;
@@ -533,17 +510,17 @@ public class TinyWebServer extends Thread {
         }
         return content;
     }
-    
-    
+
+
     public static void init(String ip,int port,String public_dir){
-    
+
         SERVER_IP=ip;
         SERVER_PORT=port;
         WEB_DIR_PATH=public_dir;
         scanFileDirectory();
-        
+
     }
-    
+
     public static void startServer(String ip,int port,String public_dir){
         try {
 
@@ -552,26 +529,26 @@ public class TinyWebServer extends Thread {
             Thread t = new TinyWebServer(SERVER_IP, SERVER_PORT);
             t.start();
             System.out.println("Server Started !");
-           
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
         }
     }
-    
+
     public static void stopServer(){
         if(isStart){
             try{
-            isStart=false;
-            serverSocket.close();
-            System.out.println("Server stopped running !");
+                isStart=false;
+                serverSocket.close();
+                System.out.println("Server stopped running !");
             }catch(IOException er){
                 er.printStackTrace();
             }
         }
     }
-    
-    
+
+
     //scan for index file
     public static void scanFileDirectory(){
         boolean isIndexFound=false;
@@ -587,14 +564,14 @@ public class TinyWebServer extends Thread {
                     }
                 }
             }
-            
+
         }catch(Exception er){}
-        
+
         if(!isIndexFound){
             System.out.println("Index file not found !");
         }
     }
-    
+
    /* //use for testing
     public static void main(String[] args) {
         try {
@@ -610,3 +587,4 @@ public class TinyWebServer extends Thread {
     }*/
 
 }
+
