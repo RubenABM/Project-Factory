@@ -7,7 +7,7 @@ module.exports.getStudents = async function () {
 
 
     try {
-        const sql = " select * from students ";
+        const sql = " select * from student ";
         
 
         const result = await pool.query(sql);
@@ -23,7 +23,7 @@ module.exports.saveStudent = async function(stu) {
 
         let sql =
             "INSERT " +
-            "INTO students " +
+            "INTO student " +
             "(stu_name, stu_phone) " +
             "VALUES ($1, $2) ";
 
