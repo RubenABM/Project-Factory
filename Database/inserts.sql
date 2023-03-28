@@ -4,3 +4,4 @@ insert into user (user_name, user_email, user_password, user_points) values ('Ar
 ---------TEST INSERT-------------------------
 
 insert into student (stu_name, stu_phone) values ('André Santos','925478589'); 
+insert into student (stu_name, stu_phone) values ('Joana Mendes','918822321'); 

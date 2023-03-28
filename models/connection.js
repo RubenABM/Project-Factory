@@ -2,7 +2,7 @@ var pg = require('pg');
 
 //const connectionString = "";
 
-//Exemplo -> 
+//Formato da connection string -> 
 //const connectionString = "postgres://" + process.env.DBUSER + ":" + process.env.DBPASS + "@localhost:5432/Products";
 
 //Connection strings locais:
@@ -17,14 +17,11 @@ console.log("connectionString = " + connectionString);
 const Pool = pg.Pool
 const pool = new Pool({
     connectionString,
-    max: 10
-    // For Heroku
-    /*       ,
-    ssl: {
+    max: 10,
+    ssl:{
         require: true,
         rejectUnauthorized: false
-    */
-}).on('connect', (stream) => {
+}}).on('connect', (stream) => {
     console.log('Connected to PG.');
 });
 

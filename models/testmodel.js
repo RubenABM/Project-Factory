@@ -2,7 +2,7 @@ const { response } = require("express");
 var pool = require('./connection');
 var { mssql, poolPromise } = require('./connection');
 
-
+//Obter estudantes
 module.exports.getStudents = async function () {
 
 
@@ -18,6 +18,7 @@ module.exports.getStudents = async function () {
     }
 }
 
+//Inserir um estudante
 module.exports.saveStudent = async function(stu) {
     try {
 
