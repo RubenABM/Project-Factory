@@ -68,7 +68,7 @@ https://www.ptrobotics.com/baterias-lipo/3231-polymer-lithium-ion-battery-37v-85
 
 - ESP32 dev kit
 
-         - Dimensões:55 x 27 x 48mm (aproximadamente)
+         - Dimensões:55 x 27 x 4,8mm (aproximadamente)
 
 - breadboard (protótipo será desenvolvido sobre breadboard)
 
