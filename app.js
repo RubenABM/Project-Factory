@@ -9,6 +9,7 @@ var brcypt = require('bcrypt');
 
 var indexRouter = require('./routes/index');
 var testRouter = require('./routes/test');
+var userRouter = require('./routes/users');
 
 var app = express();
 
@@ -21,7 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/students', testRouter);
+app.use('/test', testRouter);
+app.use('/users', userRouter);
 
 
 app.listen(port, () => {
