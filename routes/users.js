@@ -11,11 +11,23 @@ router.get('/', async function (req, res, next) {
   res.send(result);
 });
 
-//POST Teste -> Inserir um novo user
+//POST -> Inserir um novo user
 router.post('/insertnewuser', async function(req, res, next) {
   let newUser = req.body;
   let result = await usermodel.saveUser(newUser);
   res.status(result.status).send(result.result);
+});
+
+//POST -> Login
+router.post('/login', async function(req, res, next){
+  
+  let user = req.body;
+  console.log("Email = " + JSON.stringify(user));
+
+  let result = await usersModel.authUser(user);
+  res.status(result.status).send(result.result);
+
+
 });
 
 module.exports = router;
