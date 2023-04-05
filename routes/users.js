@@ -24,7 +24,7 @@ router.post('/login', async function(req, res, next){
   let user = req.body;
   console.log("Email = " + JSON.stringify(user));
 
-  let result = await usersModel.authUser(user);
+  let result = await usermodel.authUser(user);
   res.status(result.status).send(result.result);
 
 
