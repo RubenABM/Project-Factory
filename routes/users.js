@@ -30,4 +30,14 @@ router.post('/login', async function(req, res, next){
 
 });
 
+router.get('/login2/:email/:password', async function (req, res, next){
+
+  let email = req.params.email;
+  let password = req.params.password;
+  
+  let result = await usermodel.authUser2(email, password);
+  res.status(result.status).send(result.data);
+
+});
+
 module.exports = router;

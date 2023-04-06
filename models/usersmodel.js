@@ -60,4 +60,22 @@ module.exports.authUser = async function(user){
     }
 }
 
+module.exports.authUser2 = async function(email, password){
+
+    try {
+
+        let sql = "SELECT * FROM users where user_email = " + "'" + email + "'" + " AND user_password = " + "'" + password + "'";
+
+        let result = await pool.query(sql);
+        
+        return { status: 200, data: result.rows };
+
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: {msg: 'Email ou password errados!'}};
+    }
+}
+
+
     
