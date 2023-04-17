@@ -25,8 +25,8 @@ module.exports.saveUser = async function(user) {
         let sql =
             "INSERT " +
             "INTO users " +
-            "(user_name, user_email, user_password, user_points) " +
-            "VALUES ($1, $2, $3, 0) ";
+            "(user_name, user_email, user_password, user_points, user_subscription) " +
+            "VALUES ($1, $2, $3, 0, 'Free')";
 
         let result = await pool.query(sql, [user.user_name, user.user_email, user.user_password]);
         
