@@ -10,6 +10,9 @@ var brcypt = require('bcrypt');
 var indexRouter = require('./routes/index');
 var testRouter = require('./routes/test');
 var userRouter = require('./routes/users');
+var helmetsRouter = require('./routes/helmets');
+var challengesRouter = require('./routes/challenges');
+var routesRouter = require('./routes/routes');
 
 var app = express();
 
@@ -24,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/test', testRouter);
 app.use('/users', userRouter);
+app.use('/helmets', helmetsRouter);
+app.use('/challenges', challengesRouter);
+app.use('/routes', routesRouter);
 
 
 app.listen(port, () => {

@@ -2,7 +2,7 @@ const { response } = require("express");
 var pool = require('./connection');
 var { mssql, poolPromise } = require('./connection');
 
-//Obter estudantes
+//Obter todos os users
 module.exports.getUsers = async function () {
 
 
@@ -18,7 +18,21 @@ module.exports.getUsers = async function () {
     }
 }
 
-//Inserir um estudante
+//GET -> Obter um user pelo ID
+module.exports.getUserById = async function(user_id) {
+    try {
+        let sql = "select * from users where user_id = " + user_id;
+        let result = await pool.query(sql);
+        let users = result.rows;
+        console.log("User = " + JSON.stringify(users));
+        return { status: 200, data: users };
+    } catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+}
+
+//Inserir um user
 module.exports.saveUser = async function(user) {
     try {
 
@@ -77,5 +91,39 @@ module.exports.authUser2 = async function(email, password){
     }
 }
 
+//GET -> Obter um user pelo ID
+module.exports.getUserHelmets = async function(user_id) {
+    try {
+        let sql = " select * from users " +
+        "inner join helmet on helmet_user_id = user_id " +
+        "where user_id = " + user_id;
+        
+        let result = await pool.query(sql);
+        let users = result.rows;
+        console.log("User = " + JSON.stringify(users));
+        return { status: 200, data: users };
+    } catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+}
+
+module.exports.getUserRouteData = async function(user_id, route_id) {
+    try {
+        let sql = " select * from users " +
+        "inner join data on data_user_id = user_id " +
+        "inner join route on data_route_id = route_id " +
+        "where user_id = " + user_id + " and route_id = " + route_id;
+        
+        let result = await pool.query(sql);
+        let users = result.rows;
+        console.log("User = " + JSON.stringify(users));
+
+        return { status: 200, data: users };
+    } catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+}
 
     
