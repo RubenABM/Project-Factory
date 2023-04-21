@@ -47,6 +47,7 @@ router.get('/data/:id1/:id2', async function(req, res, next){
 //POST -> Inserir um novo user
 router.post('/insertnewuser', async function(req, res, next) {
   let newUser = req.body;
+  
   let result = await usermodel.saveUser(newUser);
   res.status(result.status).send(result.result);
 });
