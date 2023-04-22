@@ -11,4 +11,12 @@ router.get('/', async function (req, res, next) {
   res.send(result);
 });
 
+//POST -> Inserir uma rota
+router.post('/insertnewroute', async function(req, res, next) {
+  let newRoute = req.body;
+  let result = await routesmodel.saveRoutes(newRoute);
+  res.status(result.status).send(result.result);
+});
+
+
 module.exports = router;

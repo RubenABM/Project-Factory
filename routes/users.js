@@ -74,4 +74,15 @@ router.get('/login2/:email/:password', async function (req, res, next){
 
 });
 
+//POST -> Inserir dados de um user numa rota
+router.post('/insertnewdata', async function(req, res, next){
+  
+  let data = req.body;
+  console.log("Data = " + JSON.stringify(data));
+
+  let result = await usermodel.saveUserRouteData(data);
+  res.status(result.status).send(result.result);
+
+});
+
 module.exports = router;

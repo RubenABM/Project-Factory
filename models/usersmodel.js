@@ -108,6 +108,7 @@ module.exports.getUserHelmets = async function(user_id) {
     }
 }
 
+//GET -> Obter dados de um user numa rota
 module.exports.getUserRouteData = async function(user_id, route_id) {
     try {
         let sql = " select * from users " +
@@ -126,4 +127,23 @@ module.exports.getUserRouteData = async function(user_id, route_id) {
     }
 }
 
+//POST -> Inserir dados de um user numa determinada rota
+module.exports.saveUserRouteData = async function(user) {
+    try {
+
+        let sql =
+            "INSERT " +
+            "INTO data " +
+            "(data_bpm, data_temp, data_hum, data_user_id, data_route_id) " +
+            "VALUES ($1, $2, $3, $4, $5)";
+
+        let result = await pool.query(sql, [user.data_bpm, user.data_temp, user.data_hum, user.data_user_id, user.data_route_id]);
+        
+        return { status: 200, result: result };
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: err };
+    }
+}
     

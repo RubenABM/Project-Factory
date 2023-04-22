@@ -16,3 +16,19 @@ module.exports.getRoutes = async function () {
         return { status: 500, data: err };
     }
 }
+
+//Inserir uma nova rota
+module.exports.saveRoutes = async function (route) {
+
+    try {
+        const sql = " insert into route (route_coord, route_fav) values ($1, false); ";
+        
+        let result = await pool.query(sql, [route.route_coord]);
+        
+        return { status: 200, result: result };
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: err };
+    }
+}
