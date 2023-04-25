@@ -85,4 +85,16 @@ router.post('/insertnewdata', async function(req, res, next){
 
 });
 
+//POST (alterar no futuro ?) -> Atualizar dados de um user
+router.post('/updateuser/:id', async function(req, res, next){
+  
+  let id = req.params.id;
+  let user = req.body;
+  console.log("User = " + JSON.stringify(user));
+
+  let result = await usermodel.updateUser(user, id);
+  res.status(result.status).send(result.result);
+
+});
+
 module.exports = router;

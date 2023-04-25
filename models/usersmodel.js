@@ -146,4 +146,27 @@ module.exports.saveUserRouteData = async function(user) {
         return { status: 500, result: err };
     }
 }
+
+
+//POST (trocar no futuro ?) -> Atualizar dados de um user
+module.exports.updateUser = async function(user, user_id) {
+    try {
+
+        let sql =
+            " UPDATE users " +
+            " SET user_name = $1, " +
+            " user_email = $2, " +
+            " user_password = $3 " + 
+            " WHERE user_id = " + user_id;
+
+        console.log(sql)    
+        let result = await pool.query(sql, [user.user_name, user.user_email, user.user_password]);
+        
+        return { status: 200, result: result };
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: err };
+    }
+}
     
