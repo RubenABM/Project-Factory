@@ -10,7 +10,10 @@ var pg = require('pg');
 
 
 //Connection string AWS:
-const connectionString = "postgres://postgres:12345678@smarthelmetdb.c4eu33pgml2z.eu-west-2.rds.amazonaws.com:5432/postgres";
+//const connectionString = "postgres://postgres:12345678@smarthelmetdb.c4eu33pgml2z.eu-west-2.rds.amazonaws.com:5432/postgres";
+
+const connectionString = "postgres://postgres:postgres@smarthelmet.cyxzsgn31s0w.eu-west-2.rds.amazonaws.com:5432/postgres";
+
 
 console.log("connectionString = " + connectionString);
 
