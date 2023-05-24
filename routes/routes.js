@@ -18,5 +18,13 @@ router.post('/insertnewroute', async function(req, res, next) {
   res.status(result.status).send(result.result);
 });
 
+//GET -> Obter todas as rotas se um user
+router.get('/user/:id', async function (req, res, next) {
+  let id = req.params.id; 
+  console.log("Retrieving user routes with id " + id);
+  let result = await routesmodel.getUserRoutes(id);
+  res.send(result);
+});
+
 
 module.exports = router;
