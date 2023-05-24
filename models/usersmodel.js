@@ -134,10 +134,10 @@ module.exports.saveUserRouteData = async function(user) {
         let sql =
             "INSERT " +
             "INTO data " +
-            "(data_bpm, data_temp, data_hum, data_user_id, data_route_id) " +
-            "VALUES ($1, $2, $3, $4, $5)";
+            "(data_bpm, data_temp, data_hum, data_startTime, data_endTime, data_user_id, data_route_id) " +
+            "VALUES ($1, $2, $3, $4, $5, $6, $7)";
 
-        let result = await pool.query(sql, [user.data_bpm, user.data_temp, user.data_hum, user.data_user_id, user.data_route_id]);
+        let result = await pool.query(sql, [user.data_bpm, user.data_temp, user.data_hum, user.data_startTime, user.data_endTime, user.data_user_id, user.data_route_id]);
         
         return { status: 200, result: result };
     } catch (err) {
