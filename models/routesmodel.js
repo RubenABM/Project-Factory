@@ -42,7 +42,6 @@ module.exports.getUserRoutes = async function (user_id) {
         "inner join users on route_user_id = user_id " +
         "where user_id =  " + user_id;
         
-        console.log("SQL: " + sql)
         let result = await pool.query(sql);
         let routes = result.rows;
         console.log("Routes = " + JSON.stringify(routes));
@@ -52,4 +51,26 @@ module.exports.getUserRoutes = async function (user_id) {
         console.log(err);
         return { status: 500, data: err };
     }
+}
+
+//Obter todas as rotas de um user por nome
+module.exports.getUserRouteByName = async function (user_id, route_name) {
+
+
+    try {
+        const sql = " select * from route " +
+        "inner join users on route_user_id = user_id " +
+        "where user_id = " + user_id + " and route_name = '" + route_name + "'";
+        
+        console.log(sql)
+        let result = await pool.query(sql);
+        let route = result.rows;
+        console.log("Route = " + JSON.stringify(route));
+
+        return result.rows;
+    } catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+    
 }

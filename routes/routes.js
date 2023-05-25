@@ -26,5 +26,14 @@ router.get('/user/:id', async function (req, res, next) {
   res.send(result);
 });
 
+//GET -> Obter todas as rotas se um user por nome
+router.get('/user/:id/:name', async function (req, res, next) {
+  let id = req.params.id;
+  let name = req.params.name;
+
+  console.log("Retrieving user routes with id " + id + " and name " + name);
+  let result = await routesmodel.getUserRouteByName(id,name);
+  res.send(result);
+});
 
 module.exports = router;
