@@ -75,3 +75,23 @@ module.exports.getUserRouteByName = async function (user_id, route_name) {
     }
     
 }
+
+//POST (trocar no futuro ?) -> Atualizar dados de uma rota de um user
+module.exports.updateRouteName = async function(route, user_id, route_id) {
+    try {
+
+        let sql =
+            " UPDATE route " +
+            " SET route_name = $1 " +
+            " where route_user_id = " + user_id + " and route_id = " + route_id;
+
+        console.log(sql)    
+        let result = await pool.query(sql, [route.route_name]);
+        
+        return { status: 200, result: result };
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: err };
+    }
+}

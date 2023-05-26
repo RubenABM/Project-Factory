@@ -36,4 +36,17 @@ router.get('/user/:id/:name', async function (req, res, next) {
   res.send(result);
 });
 
+//POST (alterar no futuro ?) -> Atualizar dados de uma rota de um user
+router.post('/updateroutename/:id/:id2', async function(req, res, next){
+  
+  let iduser = req.params.id;
+  let idroute = req.params.id2;
+  let route = req.body;
+  console.log("Route = " + JSON.stringify(route));
+
+  let result = await routesmodel.updateRouteName(route, iduser, idroute);
+  res.send(result.result);
+
+});
+
 module.exports = router;
