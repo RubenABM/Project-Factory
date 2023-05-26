@@ -38,9 +38,10 @@ module.exports.getUserRoutes = async function (user_id) {
 
 
     try {
-        const sql = " select * from route " +
-        "inner join users on route_user_id = user_id " +
-        "where user_id =  " + user_id;
+        const sql = " select route_id, route_name, route_coord, route_fav, data_startTime, data_endTime from route " +
+        " inner join data on data_route_id = route_id " +
+        " inner join users on data_user_id = user_id " +
+        " where user_id =  " + user_id;
         
         let result = await pool.query(sql);
         let routes = result.rows;
