@@ -189,3 +189,23 @@ module.exports.updateUserSubscription = async function(user, user_id) {
         return { status: 500, result: err };
     }
 }
+
+//POST (trocar no futuro ?) -> Atualizar pontos de um user
+module.exports.updateUserPoints = async function(user, user_id) {
+    try {
+
+        let sql =
+            " UPDATE users " +
+            " SET user_points = $1 " + 
+            " WHERE user_id = " + user_id;
+
+        console.log(sql)    
+        let result = await pool.query(sql, [user.user_points]);
+        
+        return { status: 200, result: result };
+    } catch (err) {
+
+        console.log(err);
+        return { status: 500, result: err };
+    }
+}

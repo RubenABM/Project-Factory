@@ -109,4 +109,16 @@ router.post('/updatesubscription/:id', async function(req, res, next){
 
 });
 
+//POST (alterar no futuro ?) -> Atualizar pontos de um user
+router.post('/updatepoints/:id', async function(req, res, next){
+  
+  let id = req.params.id;
+  let user = req.body;
+  console.log("User = " + JSON.stringify(user));
+
+  let result = await usermodel.updateUserPoints(user, id);
+  res.status(result.status).send(result.result);
+
+});
+
 module.exports = router;
